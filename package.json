@@ -1,6 +1,6 @@
 {
-  "name": "t",
-  "version": "0.0.0",
+  "name": "evenements-edsr-fronted",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
