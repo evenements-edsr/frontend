@@ -4,11 +4,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent }     from './app.component';
 import { LoginModule }      from './login/login.module';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { NavbarComponent } from './navbar/navbar.component';
-library.add(faEnvelope);
+import { FontAwesomeModule }                 from '@fortawesome/angular-fontawesome';
+import { library }                           from '@fortawesome/fontawesome-svg-core';
+import { faEnvelope, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { NavbarComponent }                   from './navbar/navbar.component';
+import { faFacebook, faGoogle, faTwitter }   from '@fortawesome/free-brands-svg-icons';
+
+library.add(faEnvelope,faExclamationTriangle, faGoogle, faFacebook, faTwitter);
 
 @NgModule({
   declarations: [
