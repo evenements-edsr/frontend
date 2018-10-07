@@ -1,7 +1,13 @@
-@import 'assets/styles/variables.scss';
+@import 'assets/styles/css/layout';
 
 html, body {
   min-height: 100vh;
   height: auto;
   margin: 0;
+}
+
+body .ui-inputtext:enabled:focus:not(.ui-state-error) {
+  border-color: #007ad9;
+  outline: 0;
+  box-shadow: none;
 }
