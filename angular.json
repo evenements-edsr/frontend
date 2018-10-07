@@ -29,8 +29,14 @@
             "styles": [
               "node_modules/primeng/resources/primeng.min.css",        //required: PrimeNG components
               "node_modules/primeicons/primeicons.css",                   //required: PrimeIcons
+              "node_modules/bulma/css/bulma.min.css",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
