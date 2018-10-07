@@ -12,7 +12,7 @@ export class InscriptionComponent implements OnInit {
 
   ngOnInit() {
     // Initialize all input of date type.
-    const calendars = bulmaCalendar.attach('[type="date"]', {lang : 'fr'});
+    const calendars = bulmaCalendar.attach('[type="date"]', {lang : 'fr', showHeader : false, displayMode : 'default'});
 
 // Loop on each calendar initialized
     calendars.forEach(calendar => {
