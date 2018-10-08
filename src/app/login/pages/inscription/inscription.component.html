@@ -2,32 +2,49 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-half">
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
         <h3 class="title is-3">Création d'un compte utilisateur</h3>
         <div class="field">
-          <label class="label">Prénom</label>
+          <label class="label">Prénom*</label>
           <div class="control">
-            <input class="input" type="text" placeholder="prénom">
+            <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('prenom')}"  formControlName="prenom" type="text" placeholder="prénom">
+            <!-- TODO refactor this to extract component-->
+            <ng-container *ngIf="shouldDisplayErrors('prenom')">
+              <ng-container *ngFor="let validation of signUpValidationMessage.prenom">
+                <p *ngIf="signUpForm.get('prenom').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
+              </ng-container>
+            </ng-container>
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Nom</label>
+          <label class="label">Nom*</label>
           <div class="control">
-            <input class="input" type="text" placeholder="nom">
+            <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('nom')}" formControlName="nom" type="text" placeholder="nom">
+            <ng-container *ngIf="shouldDisplayErrors('nom')">
+              <ng-container *ngFor="let validation of signUpValidationMessage.nom">
+                <p *ngIf="signUpForm.get('nom').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
+              </ng-container>
+            </ng-container>
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Date de naissance</label>
+          <label class="label">Date de naissance*</label>
           <div class="control">
-            <input class="input" type="date" placeholder="xx/xx/xxxx">
+            <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('dateDeNaissance')}" formControlName="dateDeNaissance" type="date" placeholder="xx/xx/xxxx">
+            <ng-container *ngIf="shouldDisplayErrors('dateDeNaissance')">
+              <ng-container *ngFor="let validation of signUpValidationMessage.dateDeNaissance">
+                <p *ngIf="signUpForm.get('dateDeNaissance').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
+              </ng-container>
+            </ng-container>
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Email</label>
+          <label class="label">Email*</label>
           <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+            <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('email')}" formControlName="email" type="email" placeholder="Email input" value="hello@">
             <span class="icon is-small is-left">
               <fa-icon icon="envelope"></fa-icon>
             </span>
@@ -35,42 +52,65 @@
               <fa-icon icon="exclamation-triangle"></fa-icon>
             </span>
           </div>
-          <p class="help is-danger">This email is invalid</p>
+          <ng-container *ngIf="shouldDisplayErrors('email')">
+            <ng-container *ngFor="let validation of signUpValidationMessage.email">
+              <p *ngIf="signUpForm.get('email').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
+            </ng-container>
+          </ng-container>
         </div>
 
         <div class="field">
-          <label class="label">Marque de la moto</label>
+          <label class="label">Marque de la moto*</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Marque de la moto">
+            <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('marqueMoto')}" formControlName="marqueMoto" type="text" placeholder="Marque de la moto">
+            <ng-container *ngIf="shouldDisplayErrors('marqueMoto')">
+              <ng-container *ngFor="let validation of signUpValidationMessage.marqueMoto">
+                <p *ngIf="signUpForm.get('marqueMoto').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
+              </ng-container>
+            </ng-container>
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Modèle de la moto</label>
+          <label class="label">Modèle de la moto*</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Modèle de la moto">
+            <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('modeleMoto')}" formControlName="modeleMoto" type="text" placeholder="Modèle de la moto">
+            <ng-container *ngIf="shouldDisplayErrors('modeleMoto')">
+              <ng-container *ngFor="let validation of signUpValidationMessage.modeleMoto">
+                <p *ngIf="signUpForm.get('modeleMoto').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
+              </ng-container>
+            </ng-container>
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Immatriculation</label>
+          <label class="label">Immatriculation*</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Immatriculation">
+            <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('immatriculationMoto')}" formControlName="immatriculationMoto" type="text" placeholder="Immatriculation">
+            <ng-container *ngIf="shouldDisplayErrors('immatriculationMoto')">
+              <ng-container *ngFor="let validation of signUpValidationMessage.immatriculationMoto">
+                <p *ngIf="signUpForm.get('immatriculationMoto').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
+              </ng-container>
+            </ng-container>
           </div>
         </div>
 
-
         <div class="field">
-          <label class="label">Date d'obtention du permis A</label>
+          <label class="label">Date d'obtention du permis A*</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Date d'obtention du permis A">
+            <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('datePermis')}" formControlName="datePermis" type="text" placeholder="Date d'obtention du permis A">
+            <ng-container *ngIf="shouldDisplayErrors('datePermis')">
+              <ng-container *ngFor="let validation of signUpValidationMessage.datePermis">
+                <p *ngIf="signUpForm.get('datePermis').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
+              </ng-container>
+            </ng-container>
           </div>
         </div>
 
         <div class="field">
           <div class="control">
             <label class="checkbox">
-              <input type="checkbox">
+              <input type="checkbox" formControlName="activerNotification">
               Activer les notifications par email
             </label>
           </div>
@@ -78,13 +118,15 @@
 
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link">Valider</button>
+            <button type="submit" class="button is-link">Valider</button>
           </div>
           <div class="control">
-            <button class="button is-text">Annuler</button>
+            <button type="button" class="button is-text">Annuler</button>
           </div>
         </div>
+        </form>
       </div>
+
     </div>
   </div>
 </section>
