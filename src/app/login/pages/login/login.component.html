@@ -1,19 +1,30 @@
 <section class="section">
   <div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="columns is-centered">
       <div class="column is-half">
         <h3 class="title is-3" style="text-align: center">Connexion</h3>
         <div class="field">
           <label class="label">Adresse email</label>
           <div class="control">
-            <input class="input" type="text" placeholder="email">
+            <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('email')}" formControlName="email" type="text" placeholder="email">
+            <ng-container *ngIf="shouldDisplayErrors('email')">
+              <ng-container *ngFor="let validation of loginValidationMessage.email">
+                <p *ngIf="loginForm.get('email').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
+              </ng-container>
+            </ng-container>
           </div>
         </div>
 
         <div class="field">
           <label class="label">Mot de passe</label>
           <div class="control">
-            <input class="input" type="text" placeholder="mot de passe">
+            <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('password')}" formControlName="password" type="text" placeholder="mot de passe">
+            <ng-container *ngIf="shouldDisplayErrors('password')">
+              <ng-container *ngFor="let validation of loginValidationMessage.password">
+                <p *ngIf="loginForm.get('password').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
+              </ng-container>
+            </ng-container>
           </div>
         </div>
       </div>
@@ -22,14 +33,15 @@
       <div class="column is-half">
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link">Valider</button>
+            <button type="submit" class="button is-link">Valider</button>
           </div>
           <div class="control">
-            <button class="button is-text">Annuler</button>
+            <button type="button" class="button is-text">Annuler</button>
           </div>
         </div>
       </div>
     </div>
+    </form>
 
     <div class="columns is-centered">
       <div class="column is-half">
