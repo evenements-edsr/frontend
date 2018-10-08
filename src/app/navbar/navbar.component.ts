@@ -5,10 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './navbar.component.html'
 })
 export class NavbarComponent implements OnInit {
+  isBurgerClicked = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onClickBurger() {
+    this.isBurgerClicked = !this.isBurgerClicked;
+  }
 }

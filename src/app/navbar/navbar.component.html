@@ -4,9 +4,14 @@
       <strong>EDSR</strong>
     </a>
 
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" [ngClass]="{'is-active' : isBurgerClicked }" (click)="onClickBurger()">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
   </div>
 
-  <div class="navbar-menu">
+  <div class="navbar-menu" [ngClass]="{'is-active' : isBurgerClicked }">
     <div class="navbar-start">
       <a class="navbar-item">
         Liste des événements
