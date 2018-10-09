@@ -8,12 +8,7 @@
           <label class="label">Prénom*</label>
           <div class="control">
             <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('prenom')}"  formControlName="prenom" type="text" placeholder="prénom">
-            <!-- TODO refactor this to extract component-->
-            <ng-container *ngIf="shouldDisplayErrors('prenom')">
-              <ng-container *ngFor="let validation of signUpValidationMessage.prenom">
-                <p *ngIf="signUpForm.get('prenom').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
-              </ng-container>
-            </ng-container>
+            <edsr-display-errors [control]="signUpForm.get('prenom')" [validationMessages]="signUpValidationMessage.prenom"></edsr-display-errors>
           </div>
         </div>
 
@@ -21,11 +16,7 @@
           <label class="label">Nom*</label>
           <div class="control">
             <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('nom')}" formControlName="nom" type="text" placeholder="nom">
-            <ng-container *ngIf="shouldDisplayErrors('nom')">
-              <ng-container *ngFor="let validation of signUpValidationMessage.nom">
-                <p *ngIf="signUpForm.get('nom').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
-              </ng-container>
-            </ng-container>
+            <edsr-display-errors [control]="signUpForm.get('nom')" [validationMessages]="signUpValidationMessage.nom"></edsr-display-errors>
           </div>
         </div>
 
@@ -33,11 +24,7 @@
           <label class="label">Date de naissance*</label>
           <div class="control">
             <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('dateDeNaissance')}" formControlName="dateDeNaissance" type="date" placeholder="xx/xx/xxxx">
-            <ng-container *ngIf="shouldDisplayErrors('dateDeNaissance')">
-              <ng-container *ngFor="let validation of signUpValidationMessage.dateDeNaissance">
-                <p *ngIf="signUpForm.get('dateDeNaissance').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
-              </ng-container>
-            </ng-container>
+            <edsr-display-errors [control]="signUpForm.get('dateDeNaissance')" [validationMessages]="signUpValidationMessage.nom"></edsr-display-errors>
           </div>
         </div>
 
@@ -52,22 +39,14 @@
               <fa-icon icon="exclamation-triangle"></fa-icon>
             </span>
           </div>
-          <ng-container *ngIf="shouldDisplayErrors('email')">
-            <ng-container *ngFor="let validation of signUpValidationMessage.email">
-              <p *ngIf="signUpForm.get('email').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
-            </ng-container>
-          </ng-container>
+          <edsr-display-errors [control]="signUpForm.get('email')" [validationMessages]="signUpValidationMessage.nom"></edsr-display-errors>
         </div>
 
         <div class="field">
           <label class="label">Marque de la moto*</label>
           <div class="control">
             <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('marqueMoto')}" formControlName="marqueMoto" type="text" placeholder="Marque de la moto">
-            <ng-container *ngIf="shouldDisplayErrors('marqueMoto')">
-              <ng-container *ngFor="let validation of signUpValidationMessage.marqueMoto">
-                <p *ngIf="signUpForm.get('marqueMoto').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
-              </ng-container>
-            </ng-container>
+            <edsr-display-errors [control]="signUpForm.get('marqueMoto')" [validationMessages]="signUpValidationMessage.nom"></edsr-display-errors>
           </div>
         </div>
 
@@ -75,11 +54,7 @@
           <label class="label">Modèle de la moto*</label>
           <div class="control">
             <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('modeleMoto')}" formControlName="modeleMoto" type="text" placeholder="Modèle de la moto">
-            <ng-container *ngIf="shouldDisplayErrors('modeleMoto')">
-              <ng-container *ngFor="let validation of signUpValidationMessage.modeleMoto">
-                <p *ngIf="signUpForm.get('modeleMoto').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
-              </ng-container>
-            </ng-container>
+            <edsr-display-errors [control]="signUpForm.get('modeleMoto')" [validationMessages]="signUpValidationMessage.nom"></edsr-display-errors>
           </div>
         </div>
 
@@ -87,11 +62,7 @@
           <label class="label">Immatriculation*</label>
           <div class="control">
             <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('immatriculationMoto')}" formControlName="immatriculationMoto" type="text" placeholder="Immatriculation">
-            <ng-container *ngIf="shouldDisplayErrors('immatriculationMoto')">
-              <ng-container *ngFor="let validation of signUpValidationMessage.immatriculationMoto">
-                <p *ngIf="signUpForm.get('immatriculationMoto').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
-              </ng-container>
-            </ng-container>
+            <edsr-display-errors [control]="signUpForm.get('immatriculationMoto')" [validationMessages]="signUpValidationMessage.nom"></edsr-display-errors>
           </div>
         </div>
 
@@ -99,11 +70,7 @@
           <label class="label">Date d'obtention du permis A*</label>
           <div class="control">
             <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('datePermis')}" formControlName="datePermis" type="text" placeholder="Date d'obtention du permis A">
-            <ng-container *ngIf="shouldDisplayErrors('datePermis')">
-              <ng-container *ngFor="let validation of signUpValidationMessage.datePermis">
-                <p *ngIf="signUpForm.get('datePermis').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
-              </ng-container>
-            </ng-container>
+            <edsr-display-errors [control]="signUpForm.get('datePermis')" [validationMessages]="signUpValidationMessage.nom"></edsr-display-errors>
           </div>
         </div>
 

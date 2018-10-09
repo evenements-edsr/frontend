@@ -35,15 +35,22 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
 
     if (this.loginForm.invalid) {
+      this.markTouchedControls()
       return;
     }
 
     alert('SUCCESS!! :-)')
   }
 
+  markTouchedControls() {
+    Object.keys(this.loginForm.controls).forEach(field => {
+      const control = this.loginForm.get(field);
+      control.markAsTouched({ onlySelf: true });
+    });
+  }
+
   shouldDisplayErrors(field: string) {
-    return (!this.loginForm.get(field).valid && this.loginForm.get(field).touched) ||
-      (this.loginForm.get(field).untouched && this.submitted);
+    return (!this.loginForm.get(field).valid && this.loginForm.get(field).touched);
   }
 
 }

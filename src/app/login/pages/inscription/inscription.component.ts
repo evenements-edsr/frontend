@@ -79,18 +79,24 @@ export class InscriptionComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    console.log(this.signUpForm.getRawValue());
 
     if (this.signUpForm.invalid) {
+      this.markTouchedControls();
       return;
     }
 
     alert('SUCCESS!! :-)')
   }
 
+  markTouchedControls() {
+    Object.keys(this.signUpForm.controls).forEach(field => {
+      const control = this.signUpForm.get(field);
+      control.markAsTouched({ onlySelf: true });
+    });
+  }
+
   shouldDisplayErrors(field: string) {
-    return (!this.signUpForm.get(field).valid && this.signUpForm.get(field).touched) ||
-      (this.signUpForm.get(field).untouched && this.submitted);
+    return (!this.signUpForm.get(field).valid && this.signUpForm.get(field).touched);
   }
 
 

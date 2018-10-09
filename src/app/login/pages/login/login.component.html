@@ -5,14 +5,10 @@
       <div class="column is-half">
         <h3 class="title is-3" style="text-align: center">Connexion</h3>
         <div class="field">
-          <label class="label">Adresse email</label>
+          <label class="label">Adresse emaill</label>
           <div class="control">
             <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('email')}" formControlName="email" type="text" placeholder="email">
-            <ng-container *ngIf="shouldDisplayErrors('email')">
-              <ng-container *ngFor="let validation of loginValidationMessage.email">
-                <p *ngIf="loginForm.get('email').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
-              </ng-container>
-            </ng-container>
+            <edsr-display-errors [control]="loginForm.get('email')" [validationMessages]="loginValidationMessage.email"></edsr-display-errors>
           </div>
         </div>
 
@@ -20,11 +16,7 @@
           <label class="label">Mot de passe</label>
           <div class="control">
             <input class="input" [ngClass]="{'is-danger' : shouldDisplayErrors('password')}" formControlName="password" type="text" placeholder="mot de passe">
-            <ng-container *ngIf="shouldDisplayErrors('password')">
-              <ng-container *ngFor="let validation of loginValidationMessage.password">
-                <p *ngIf="loginForm.get('password').hasError(validation.type)" class="help is-danger">{{validation.message}}</p>
-              </ng-container>
-            </ng-container>
+            <edsr-display-errors [control]="loginForm.get('password')" [validationMessages]="loginValidationMessage.password"></edsr-display-errors>
           </div>
         </div>
       </div>

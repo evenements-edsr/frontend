@@ -9,6 +9,7 @@ import { library }                           from '@fortawesome/fontawesome-svg-
 import { faEnvelope, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { NavbarComponent }                   from './navbar/navbar.component';
 import { faFacebook, faGoogle, faTwitter }   from '@fortawesome/free-brands-svg-icons';
+import { DisplayErrorsComponent }            from './ui/display-errors/display-errors.component';
 
 library.add(faEnvelope,faExclamationTriangle, faGoogle, faFacebook, faTwitter);
 
