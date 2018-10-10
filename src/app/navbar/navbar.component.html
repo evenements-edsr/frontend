@@ -4,7 +4,8 @@
       <strong>EDSR</strong>
     </a>
 
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" [ngClass]="{'is-active' : isBurgerClicked }" (click)="onClickBurger()">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+       [ngClass]="{'is-active' : isBurgerClicked }" (click)="onClickBurger()">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -13,7 +14,7 @@
 
   <div class="navbar-menu" [ngClass]="{'is-active' : isBurgerClicked }">
     <div class="navbar-start">
-      <a  routerLink="/evenements" class="navbar-item">
+      <a routerLink="/evenements" class="navbar-item">
         Liste des événements
       </a>
 
@@ -21,14 +22,19 @@
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons">
-          <a  routerLink="/inscription" class="button is-primary">
-            <strong>S'inscrire</strong>
-          </a>
-          <a routerLink="/login" class="button is-light">
-            Se connecter
-          </a>
-        </div>
+        <a routerLink="/inscription" class="button is-primary">
+          <strong>S'inscrire</strong>
+        </a>
+      </div>
+      <div class="navbar-item">
+        <a routerLink="/login" class="button is-light">
+          Se connecter
+        </a>
+      </div>
+      <div class="navbar-item">
+            <span class="icon is-right is-large">
+              <fa-icon class="fas fa-3x" icon="user-circle"></fa-icon>
+            </span>
       </div>
     </div>
   </div>
