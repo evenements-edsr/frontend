@@ -10,6 +10,7 @@ import { faEnvelope, faExclamationTriangle, faUserCircle } from '@fortawesome/fr
 import { NavbarComponent }                                 from './navbar/navbar.component';
 import { faFacebook, faGoogle, faTwitter }                 from '@fortawesome/free-brands-svg-icons';
 import { EventsModule }                                    from './events/events.module';
+import { ProfilModule }                                    from './profil/profil.module';
 
 library.add(faEnvelope,faExclamationTriangle, faGoogle, faFacebook, faTwitter, faUserCircle);
 
@@ -22,6 +23,7 @@ library.add(faEnvelope,faExclamationTriangle, faGoogle, faFacebook, faTwitter, f
     BrowserModule,
     LoginModule,
     EventsModule,
+    ProfilModule,
     AppRoutingModule,
     FontAwesomeModule,
   ],

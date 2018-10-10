@@ -15,4 +15,8 @@ export class NavbarComponent implements OnInit {
   onClickBurger() {
     this.isBurgerClicked = !this.isBurgerClicked;
   }
+
+  tt(event) {
+    console.log(event);
+  }
 }
