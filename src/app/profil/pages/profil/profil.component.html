@@ -1,5 +1,6 @@
 <section class="section">
   <h1 class="title is-1" style="text-align: center">Mon profil</h1>
+  <form [formGroup]="profilForm" (ngSubmit)="onSubmit()">
   <div class="container">
     <h2 class="subtitle is-2">Mes informations personnelles</h2>
     <div class="columns is-centered box">
@@ -11,7 +12,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control">
-                <input class="input" disabled type="text" placeholder="e.g. Partnership opportunity">
+                <input class="input" type="text" formControlName="nom">
               </div>
             </div>
           </div>
@@ -23,7 +24,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control">
-                <input class="input" type="text" disabled placeholder="e.g. Partnership opportunity">
+                <input class="input" type="text" formControlName="prenom">
               </div>
 
             </div>
@@ -38,7 +39,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control">
-                <input class="input" type="text" disabled placeholder="e.g. Partnership opportunity">
+                <input class="input" type="date" formControlName="dateDeNaissance">
               </div>
             </div>
           </div>
@@ -51,7 +52,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control">
-                <input class="input" type="text" disabled placeholder="e.g. Partnership opportunity">
+                <input class="input" type="text" formControlName="email">
               </div>
             </div>
         </div>
@@ -70,7 +71,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control">
-                <input class="input" disabled type="text" placeholder="e.g. Partnership opportunity">
+                <input class="input" type="text" formControlName="marqueMoto">
               </div>
             </div>
           </div>
@@ -82,7 +83,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control">
-                <input class="input" type="text" disabled placeholder="e.g. Partnership opportunity">
+                <input class="input" type="text" formControlName="modeleMoto">
               </div>
 
             </div>
@@ -97,7 +98,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control">
-                <input class="input" type="text" disabled placeholder="e.g. Partnership opportunity">
+                <input class="input" type="text" formControlName="immatriculationMoto">
               </div>
             </div>
           </div>
@@ -109,13 +110,14 @@
           <div class="field-body">
             <div class="field">
               <div class="control">
-                <input class="input" type="text" disabled placeholder="e.g. Partnership opportunity">
+                <input class="input" type="date" formControlName="datePermis">
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
-
+  </form>
 </section>

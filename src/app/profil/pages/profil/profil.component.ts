@@ -18,11 +18,11 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit() {
     // Initialize all input of date type.
-    const calendars = bulmaCalendar.attach('[type="date"]', {lang : 'fr', showHeader : false, displayMode : 'default'});
-
+    const calendars = bulmaCalendar.attach('[type="date"]', {lang : 'fr', showHeader : false, displayMode : 'default', dateFormat : 'DD/MM/YYYY'});
+//
 // Loop on each calendar initialized
     calendars.forEach(calendar => {
-      // Add listener to date:selected event
+    //   Add listener to date:selected event
       calendar.on('date:selected', date => {
         console.log(date);
       });
@@ -31,16 +31,16 @@ export class ProfilComponent implements OnInit {
     //TODO Add validateur pattern sur date
 
     this.profilForm = this.formBuilder.group({
-      prenom: ['', [Validators.required]],
-      nom: ['', [Validators.required]],
-      dateDeNaissance: ['', [Validators.required]],
-      email: ['', Validators.compose([Validators.required, Validators.email])],
+      prenom: ['Jean', [Validators.required]],
+      nom: ['Neymar', [Validators.required]],
+      dateDeNaissance: ['07/12/1993', [Validators.required]],
+      email: ['jean-neymar@gmail.com', Validators.compose([Validators.required, Validators.email])],
       password: ['', [Validators.required]],
-      marqueMoto: ['', [Validators.required]],
-      modeleMoto: ['', [Validators.required]],
-      immatriculationMoto: ['', [Validators.required]],
-      datePermis: ['', [Validators.required]],
-      activerNotification: ['']
+      marqueMoto: ['Yamaha', [Validators.required]],
+      modeleMoto: ['MT-09 Tracer', [Validators.required]],
+      immatriculationMoto: ['AB-100-CD', [Validators.required]],
+      datePermis: ['01/09/2016', [Validators.required]],
+      activerNotification: [true]
     });
   }
 

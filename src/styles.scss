@@ -1,13 +1,4 @@
-@import 'layout';
-
 html, body {
-  min-height: 100vh;
-  height: auto;
-  margin: 0;
+  background-color: #edf0f5;
 }
 
-body .ui-inputtext:enabled:focus:not(.ui-state-error) {
-  border-color: #007ad9;
-  outline: 0;
-  box-shadow: none;
-}
