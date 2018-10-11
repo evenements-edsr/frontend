@@ -11,6 +11,7 @@ import { NavbarComponent }                                 from './navbar/navbar
 import { faFacebook, faGoogle, faTwitter }                 from '@fortawesome/free-brands-svg-icons';
 import { EventsModule }                                    from './events/events.module';
 import { ProfilModule }                                    from './profil/profil.module';
+import { AdminModule }                                     from './admin/admin.module';
 
 library.add(faEnvelope,faExclamationTriangle, faGoogle, faFacebook, faTwitter, faUserCircle);
 
@@ -24,6 +25,7 @@ library.add(faEnvelope,faExclamationTriangle, faGoogle, faFacebook, faTwitter, f
     LoginModule,
     EventsModule,
     ProfilModule,
+    AdminModule,
     AppRoutingModule,
     FontAwesomeModule,
   ],
