@@ -10,6 +10,11 @@
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
+    <a class="navbar-item is-hidden-desktop" routerLink="/profil">
+        <span class="icon is-right is-large">
+          <fa-icon class="fas fa-3x" icon="user-circle"></fa-icon>
+        </span>
+    </a>
   </div>
 
   <div class="navbar-menu" [ngClass]="{'is-active' : isBurgerClicked }">
@@ -31,7 +36,7 @@
           Se connecter
         </a>
       </div>
-      <a class="navbar-item" routerLink="/profil">
+      <a class="navbar-item is-hidden-touch" routerLink="/profil">
         <span class="icon is-right is-large">
           <fa-icon class="fas fa-3x" icon="user-circle"></fa-icon>
         </span>
