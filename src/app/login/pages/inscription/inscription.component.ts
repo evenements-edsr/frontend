@@ -1,6 +1,7 @@
 import { Component, OnInit }                  from '@angular/core';
 import bulmaCalendar                          from 'bulma-calendar/dist/js/bulma-calendar.min.js';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Constants }                          from '../../../core/Constants';
 
 @Component({
   selector: 'edsr-inscription',
@@ -13,36 +14,7 @@ export class InscriptionComponent implements OnInit {
   signUpForm: FormGroup;
   submitted: boolean = false;
 
-  signUpValidationMessage = {
-    'prenom' : [
-      { type: 'required', message: 'Ce champ est obligatoire' },
-    ],
-    'nom' : [
-      { type: 'required', message: 'Ce champ est obligatoire' },
-    ],
-    'dateDeNaissance' : [
-      { type: 'required', message: 'Ce champ est obligatoire' },
-    ],
-    'marqueMoto' : [
-      { type: 'required', message: 'Ce champ est obligatoire' },
-    ],
-    'modeleMoto' : [
-      { type: 'required', message: 'Ce champ est obligatoire' },
-    ],
-    'immatriculationMoto' : [
-      { type: 'required', message: 'Ce champ est obligatoire' },
-    ],
-    'datePermis' : [
-      { type: 'required', message: 'Ce champ est obligatoire' },
-    ],
-    'email': [
-      { type: 'required', message: 'L\'adresse email est obligatoire' },
-      { type: 'email', message: 'L\'adresse n\'est pas une adresse email valide' }
-    ],
-    'password': [
-      { type: 'required', message: 'Le mot de passe est obligatoire' },
-    ],
-  };
+  signUpValidationMessage = Constants.signUpValidationMessage;
 
 
   ngOnInit() {
