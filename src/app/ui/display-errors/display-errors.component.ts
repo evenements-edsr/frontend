@@ -20,8 +20,6 @@ export class DisplayErrorsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.validationMessages);
-    console.log(this.control);
   }
 
   shouldDisplayErrors() {
