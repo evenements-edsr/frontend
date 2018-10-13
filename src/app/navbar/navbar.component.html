@@ -19,20 +19,20 @@
 
   <div class="navbar-menu" [ngClass]="{'is-active' : isBurgerClicked }">
     <div class="navbar-start">
-      <a routerLink="/evenements" class="navbar-item">
+      <a (click)="navigateFromNavbar('/evenements')" class="navbar-item">
         Liste des événements
       </a>
 
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link" routerLink="/admin">
+        <a class="navbar-link" (click)="navigateFromNavbar('/admin')">
           Administration
         </a>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item" routerLink="/admin/utilisateurs">
+          <a class="navbar-item" (click)="navigateFromNavbar('/admin/utilisateurs')">
             Gestion des utilisateurs
           </a>
-          <a class="navbar-item" routerLink="/admin/evenements">
+          <a class="navbar-item" (click)="navigateFromNavbar('/admin/evenements')" >
             Gestion des évènements
           </a>
       </div>
@@ -42,16 +42,16 @@
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <a routerLink="/inscription" class="button is-primary">
+        <a (click)="navigateFromNavbar('/inscription')" class="button is-primary">
           <strong>S'inscrire</strong>
         </a>
       </div>
       <div class="navbar-item">
-        <a routerLink="/login" class="button is-light">
+        <a (click)="navigateFromNavbar('/login')" class="button is-light">
           Se connecter
         </a>
       </div>
-      <a class="navbar-item is-hidden-touch" routerLink="/profil">
+      <a class="navbar-item is-hidden-touch" (click)="navigateFromNavbar('/profil')">
         <span class="icon is-right is-large">
           <fa-icon class="fas fa-3x" icon="user-circle"></fa-icon>
         </span>
